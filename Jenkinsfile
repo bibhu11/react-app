@@ -8,8 +8,7 @@ pipeline {
         nodejs "node"
     }
 
-    node('docker') {
-
+  
     stages {
         stage('Test') {
             steps {
@@ -28,7 +27,7 @@ pipeline {
         //     }
         // }
     }
-}
+
 }
 
 //     stages {
