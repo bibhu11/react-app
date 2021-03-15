@@ -4,6 +4,8 @@ pipeline {
     //     dockerfile true 
     // }
 
+    agent any
+    
     tools {
         nodejs "node"
     }
