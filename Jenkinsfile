@@ -1,13 +1,14 @@
 pipeline {
     
-    agent { 
-        dockerfile true 
-    }
+    // agent { 
+    //     dockerfile true 
+    // }
 
     tools {
         nodejs "node"
     }
 
+    node('docker') {
 
     stages {
         stage('Test') {
@@ -18,14 +19,14 @@ pipeline {
         }
         stage('build') {
             steps{
-                sh'sudo docker build -t react-app'
+                sh'sudo docker build -t react-appv -f Dockerfile .'
             }
         }
-        stage('run') {
-            steps{
-                sh'sudo docker run --name=react-app -d -p 3000:3000 react-app'
-            }
-        }
+        // stage('run') {
+        //     steps{
+        //         sh'sudo docker run --name=react-app -d -p 3000:3000 react-app'
+        //     }
+        // }
     }
 }
 
