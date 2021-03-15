@@ -21,6 +21,7 @@ pipeline {
         stage('Build') {
             steps {
                 bat 'npm install'
+		bat 'npm run rest-server'
                 bat 'npm start'
             }
         }
