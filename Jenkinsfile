@@ -17,10 +17,14 @@ pipeline {
             }
         }
         stage('build') {
-            sh'sudo docker build -t react-app'
+            steps{
+                sh'sudo docker build -t react-app'
+            }
         }
         stage('run') {
-            sh'sudo docker run --name=react-app -d -p 3000:3000 react-app'
+            steps{
+                sh'sudo docker run --name=react-app -d -p 3000:3000 react-app'
+            }
         }
     }
 }
