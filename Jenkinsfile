@@ -2,12 +2,12 @@ pipeline {
     
     agent { 
         dockerfile true 
-        args '-u root:sudo'
     }
 
     tools {
         nodejs "node"
     }
+
 
     stages {
         stage('Test') {
@@ -15,6 +15,12 @@ pipeline {
                 sh 'node --version'
                 sh 'svn --version'
             }
+        }
+        stage('build') {
+            sh'sudo docker build -t react-app'
+        }
+        stage('run') {
+            sh'sudo docker run --name=react-app -d -p 3000:3000 react-app'
         }
     }
 }
