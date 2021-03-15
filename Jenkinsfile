@@ -5,7 +5,7 @@ pipeline {
     // }
 
     agent any
-    
+
     tools {
         nodejs "node"
     }
@@ -15,7 +15,6 @@ pipeline {
         stage('Test') {
             steps {
                 sh 'node --version'
-                sh 'svn --version'
             }
         }
         stage('build') {
