@@ -19,7 +19,7 @@ pipeline {
         }
         stage('build') {
             steps{
-                sh 'sudo docker build -t react-app -f Dockerfile .'
+                sh 'docker build -t react-app -f Dockerfile .'
             }
         }
         // stage('run') {
