@@ -1,12 +1,12 @@
 pipeline {
-    agent any
+    
+    agent { dockerfile true }
 
     tools {
-        nodejs "node",
+        nodejs "node"
         docker "docker"
     }
 
-    agent { dockerfile true }
     stages {
         stage('Test') {
             steps {
