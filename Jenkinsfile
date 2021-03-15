@@ -19,7 +19,7 @@ pipeline {
         }
         stage('build') {
             steps{
-                sh'sudo docker build -t react-appv -f Dockerfile .'
+                sh 'sudo docker build -t react-app -f Dockerfile .'
             }
         }
         // stage('run') {
@@ -28,6 +28,7 @@ pipeline {
         //     }
         // }
     }
+}
 }
 
 //     stages {
